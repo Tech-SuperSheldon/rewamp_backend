@@ -152,60 +152,80 @@ app.post("/api/super-sheldon-form/submit", async (req, res) => {
 
     // Send confirmation email with the guide link
     const html = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
-        <p style="font-size: 16px; line-height: 1.6;">Hi there,</p>
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
         
-        <p style="font-size: 16px; line-height: 1.6;">
-          Thank you for signing up! 😊<br/>
-          We're excited to share your Free Curriculum Guidance Book to help you support your child's learning journey with clarity and confidence.
-        </p>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
-          <strong>📘 What you'll find inside the guide</strong>
-        </p>
-        <ul style="font-size: 15px; line-height: 1.8; padding-left: 20px;">
-          <li>Age-appropriate learning strategies</li>
-          <li>How to identify if your child needs extra academic support</li>
-          <li>Practical tips to support homework without stress</li>
-          <li>Clear curriculum breakdown by year group</li>
-          <li>Proven exam preparation techniques</li>
-        </ul>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
-          👉 <a href="${DOWNLOAD_GUIDE_URL}" target="_blank" rel="noopener noreferrer" style="color: #f97316; font-weight: bold; text-decoration: none;">Download guide here:</a><br/>
-          <a href="${DOWNLOAD_GUIDE_URL}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; font-size: 14px; word-break: break-all;">${DOWNLOAD_GUIDE_URL}</a>
-        </p>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 30px;">
-          <strong>🎓 Want personalised guidance for your child?</strong><br/>
-          Our academic experts would love to understand your child's needs and suggest the right learning path.
-        </p>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 10px;">
-          📅 <a href="${DEMO_URL}" target="_blank" rel="noopener noreferrer" style="color: #f97316; font-weight: bold; text-decoration: none;">Book a free 1-on-1 demo session here:</a><br/>
-          <a href="${DEMO_URL}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; font-size: 14px;">${DEMO_URL}</a>
-        </p>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 15px;">
-          In this session, we will:
-        </p>
-        <ul style="font-size: 15px; line-height: 1.8; padding-left: 20px;">
-          <li>Assess your child's current learning level</li>
-          <li>Share a personalised academic roadmap</li>
-          <li>Explain how Super Sheldon supports students step by step</li>
-        </ul>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
-          If you have any questions, just reply to this email. We're happy to help.
-        </p>
-
-        <p style="font-size: 16px; line-height: 1.6; margin-top: 30px;">
-          Warm regards,<br/>
-          <strong>Team Super Sheldon</strong><br/>
-          Building confident learners, one child at a time 🚀
-        </p>
-      </div>
-    `;
+            <p style="font-size: 16px; line-height: 1.6;">
+              Hi there,
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6;">
+              Thank you for signing up! 😊<br/>
+              We're excited to share your <strong>Free Curriculum Guidance Book</strong> to help you support your child's learning journey with clarity and confidence.
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
+              <strong>📘 What you'll find inside the guide</strong>
+            </p>
+        
+            <ul style="font-size: 15px; line-height: 1.8; padding-left: 20px;">
+              <li>Age-appropriate learning strategies</li>
+              <li>How to identify if your child needs extra academic support</li>
+              <li>Practical tips to support homework without stress</li>
+              <li>Clear curriculum breakdown by year group</li>
+              <li>Proven exam preparation techniques</li>
+            </ul>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
+              👉 <a href="${DOWNLOAD_GUIDE_URL}" target="_blank" rel="noopener noreferrer"
+                style="color: #f97316; font-weight: bold; text-decoration: none;">
+                Download guide here
+              </a>
+              <br/>
+              <a href="${DOWNLOAD_GUIDE_URL}" target="_blank" rel="noopener noreferrer"
+                style="color: #2563eb; font-size: 14px; word-break: break-all;">
+                ${DOWNLOAD_GUIDE_URL}
+              </a>
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 30px;">
+              <strong>🎓 Want personalised guidance for your child?</strong><br/>
+              Our academic experts would love to understand your child's needs and suggest the right learning path.
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 10px;">
+              📅 <a href="${DEMO_URL}" target="_blank" rel="noopener noreferrer"
+                style="color: #f97316; font-weight: bold; text-decoration: none;">
+                Book a free 1-on-1 demo session here
+              </a>
+              <br/>
+              <a href="${DEMO_URL}" target="_blank" rel="noopener noreferrer"
+                style="color: #2563eb; font-size: 14px;">
+                ${DEMO_URL}
+              </a>
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 15px;">
+              In this session, we will:
+            </p>
+        
+            <ul style="font-size: 15px; line-height: 1.8; padding-left: 20px;">
+              <li>Assess your child's current learning level</li>
+              <li>Share a personalised academic roadmap</li>
+              <li>Explain how Super Sheldon supports students step by step</li>
+            </ul>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
+              If you have any questions, just reply to this email. We're happy to help.
+            </p>
+        
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 30px;">
+              Warm regards,<br/>
+              <strong>Team Super Sheldon</strong><br/>
+              Building confident learners, one child at a time 🚀
+            </p>
+        
+          </div>
+`;
 
     const emailResult = await sendEmail(
       normalized.email,
